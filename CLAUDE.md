@@ -28,3 +28,9 @@ The project follows a simple MVC-like pattern:
 - **`static/css/style.css`** — Single stylesheet using CSS custom properties (`--azul`, `--dourado`, etc.) for theming; responsive at 600px breakpoint.
 
 To add a new program: add an entry to `PROGRAMAS` in `data/programas.py` (fields: `id`, `nome`, `universidade`, `cidade`, `descricao`, `linhas`, `site`) — the templates and routing handle it automatically.
+
+## GitHub
+
+Repository: https://github.com/ccsgonc/ProjetoClaudeCode
+
+All file changes made by Claude Code are automatically committed and pushed to GitHub via a PostToolUse hook configured in `.claude/settings.json`.
