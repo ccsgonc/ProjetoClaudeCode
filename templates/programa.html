@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ programa.nome }}{% endblock %}
+
+{% block content %}
+<section class="programa-header">
+  <div class="programa-badge">{{ programa.id | upper }}</div>
+  <h1>{{ programa.nome }}</h1>
+  <p class="programa-uni">{{ programa.universidade }} &mdash; {{ programa.cidade }}</p>
+</section>
+
+<section class="programa-body">
+  <div class="programa-descricao">
+    <h2>Sobre o programa</h2>
+    <p>{{ programa.descricao }}</p>
+  </div>
+
+  <div class="programa-linhas">
+    <h2>Linhas de pesquisa</h2>
+    <ul>
+      {% for linha in programa.linhas %}
+      <li>{{ linha }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="programa-acoes">
+    <a href="{{ programa.site }}" target="_blank" rel="noopener" class="btn btn-externo">
+      Acessar site oficial
+    </a>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+  </div>
+</section>
+{% endblock %}

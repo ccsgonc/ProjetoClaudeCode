@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Programas de Demografia do Brasil{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Programas de Pós-Graduação em<br>Demografia do Brasil</h1>
+  <p>Conheça os quatro programas de referência em estudos populacionais no país.</p>
+</section>
+
+<section class="cards-grid">
+  {% for p in programas %}
+  <article class="card">
+    <div class="card-badge">{{ p.id | upper }}</div>
+    <h2 class="card-title">{{ p.nome }}</h2>
+    <p class="card-uni">{{ p.universidade }}</p>
+    <p class="card-cidade">{{ p.cidade }}</p>
+    <p class="card-desc">{{ p.descricao[:160] }}...</p>
+    <a href="{{ url_for('programa', id=p.id) }}" class="btn">Ver programa</a>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}
